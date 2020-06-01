@@ -14,8 +14,7 @@ public class HotelListFragment extends ListFragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
-        mHoteis= CarregarHoteis();
+        mHoteis = CarregarHoteis();
     }
 
     private List<Hotel> CarregarHoteis() {
