@@ -38,10 +38,18 @@ public class HotelAdapter extends BaseAdapter {
         View view = LayoutInflater.from(context).inflate(R.layout.item_hoteis, parent, false);
         Hotel hotel = mHotel.get(position);
 
-        TextView nome = view.findViewById(R.id.itens_hotel_nome);
-        nome.setText(hotel.getNome());
+        mostrarNome(view, hotel);
+        mostrarEndereco(view, hotel);
+        return view;
+    }
+
+    private void mostrarEndereco(View view, Hotel hotel) {
         TextView endereco = view.findViewById(R.id.itens_hotel_endereco);
         endereco.setText(hotel.getEndereco());
-        return null;
+    }
+
+    private void mostrarNome(View view, Hotel hotel) {
+        TextView nome = view.findViewById(R.id.itens_hotel_nome);
+        nome.setText(hotel.getNome());
     }
 }
