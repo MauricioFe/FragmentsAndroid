@@ -10,8 +10,8 @@ import android.widget.TextView;
 import java.util.List;
 
 public class HotelAdapter extends BaseAdapter {
-    private final List<Hotel> mHotel;
-    private final Context context;
+    private final List<Hotel> mHotel; //cria-se sempre uma lista
+    private final Context context; //e uma variavel context
 
     public HotelAdapter(List<Hotel> mHotel, Context context) {
         this.mHotel = mHotel;
@@ -35,10 +35,10 @@ public class HotelAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_hoteis, parent, false);
-        Hotel hotel = mHotel.get(position);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_hoteis, parent, false);//inflar a view
+        Hotel hotel = mHotel.get(position);//pegar a posição da lista
 
-        mostrarNome(view, hotel);
+        mostrarNome(view, hotel);//inicializar os componentes
         mostrarEndereco(view, hotel);
         return view;
     }

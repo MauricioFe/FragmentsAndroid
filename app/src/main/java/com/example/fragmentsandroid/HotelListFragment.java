@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HotelListFragment extends ListFragment {
-    List<Hotel> mHoteis;
+    private List<Hotel> mHoteis;
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
