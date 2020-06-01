@@ -15,6 +15,8 @@ public class HotelListFragment extends ListFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mHoteis = CarregarHoteis();
+        HotelAdapter hotelAdapter = new HotelAdapter(mHoteis, getActivity());
+        setListAdapter(hotelAdapter);
     }
 
     private List<Hotel> CarregarHoteis() {
