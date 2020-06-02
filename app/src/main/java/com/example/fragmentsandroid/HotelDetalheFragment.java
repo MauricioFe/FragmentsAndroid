@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 
 public class HotelDetalheFragment extends Fragment {
     private static String EXTRA_HOTEL = "hotel";
-    private final String TAG_DETALHE = "tagDetalhe";
+    public static String TAG_DETALHE = "tagDetalhe";
 
 
     TextView nomeHotel;
@@ -21,7 +21,8 @@ public class HotelDetalheFragment extends Fragment {
     RatingBar estrlasHotel;
 
     Hotel hotel;
-// esse é o chamado método construtor, foi criado para podermos ter uma nova instancia da classe que receba o hotel
+
+    // esse é o chamado método construtor, foi criado para podermos ter uma nova instancia da classe que receba o hotel
 //Não foi utilizado o construtor da classe pq a plataforma obriga que o construtor não receba parâmetros
     public static HotelDetalheFragment novaInstancia(Hotel hotel) {
         //Passando o hotel detro do bundle. Se o intent armazena os parametros internamento em um objeto Bundle o fragment
@@ -50,7 +51,7 @@ public class HotelDetalheFragment extends Fragment {
         nomeHotel = view.findViewById(R.id.detalhe_hotel_txtNome);
         enderecoHotel = view.findViewById(R.id.detalhe_hotel_txtEndereco);
         estrlasHotel = view.findViewById(R.id.detalhe_hotel_rtbEstrelas);
-        if (hotel != null){
+        if (hotel != null) {
             nomeHotel.setText(hotel.getNome());
             enderecoHotel.setText(hotel.getEndereco());
             estrlasHotel.setRating(hotel.getEstrelas());
