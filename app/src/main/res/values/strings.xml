@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">FragmentsAndroid</string>
+    <string name="endereco_do_hotel">Endereço do Hotel</string>
+    <string name="nome_do_hotel">Nome do Hotel</string>
 </resources>
