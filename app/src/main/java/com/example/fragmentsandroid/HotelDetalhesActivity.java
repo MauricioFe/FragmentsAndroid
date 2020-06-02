@@ -9,7 +9,7 @@ import android.os.Bundle;
 
 public class HotelDetalhesActivity extends AppCompatActivity {
 
-    private final String EXTRA_HOTEL = "hotel";
+    public static String EXTRA_HOTEL = "hotel";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

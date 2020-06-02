@@ -1,7 +1,12 @@
 package com.example.fragmentsandroid;
 
+import android.app.Activity;
+import android.app.Fragment;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ListView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.ListFragment;
 
@@ -11,6 +16,7 @@ import java.util.List;
 public class HotelListFragment extends ListFragment {
     private List<Hotel> mHoteis;
 
+
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -18,7 +24,17 @@ public class HotelListFragment extends ListFragment {
         HotelAdapter hotelAdapter = new HotelAdapter(mHoteis, getActivity());
         setListAdapter(hotelAdapter);
     }
+    @Override
+    public void onListItemClick(@NonNull ListView l, @NonNull View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
 
+        Activity activity = getActivity();
+        if (activity instanceof AoClicarNoHotel){
+            Hotel hotel = (Hotel)l.getItemAtPosition(position);
+            AoClicarNoHotel listener = (AoClicarNoHotel)activity;
+            listener.cliclouNoHotel(hotel);
+        }
+    }
     private List<Hotel> CarregarHoteis() {
         List<Hotel> hotels = new ArrayList<Hotel>();
         hotels.add(new Hotel("New Beach Hotel", "Av. Boa Viagem", 4.5f));
